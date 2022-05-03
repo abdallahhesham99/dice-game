@@ -23,11 +23,16 @@ function addPlayerName() {
   const player0Name = document.getElementById('name--0');
   const player1Name = document.getElementById('name--1');
 
-  player0Name.textContent =
-    firstPlayerName === '' ? 'Player 1' : firstPlayerName;
-
-  player1Name.textContent =
-    seconedPlayerName === '' ? 'Player 2' : seconedPlayerName;
+  if (
+    (firstPlayerName == null && seconedPlayerName == null) ||
+    (firstPlayerName === '' && seconedPlayerName === '')
+  ) {
+    player0Name.textContent = 'Player 1';
+    player1Name.textContent = 'Player 2';
+  } else {
+    player0Name.textContent = firstPlayerName;
+    player1Name.textContent = seconedPlayerName;
+  }
 }
 addPlayerName();
 // =================================================================
