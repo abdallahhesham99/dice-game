@@ -16,6 +16,20 @@ const holdButton = document.querySelector('.btn--hold');
 let currentScore = 0;
 let activePlayer = 0;
 
+//for enter players names
+function addPlayerName() {
+  const firstPlayerName = prompt('Enter first player name');
+  const seconedPlayerName = prompt('Enter seconed player name');
+  const player0Name = document.getElementById('name--0');
+  const player1Name = document.getElementById('name--1');
+
+  player0Name.textContent =
+    firstPlayerName === '' ? 'Player 1' : firstPlayerName;
+
+  player1Name.textContent =
+    seconedPlayerName === '' ? 'Player 2' : seconedPlayerName;
+}
+addPlayerName();
 // =================================================================
 //Rolling dice function
 rollButton.addEventListener('click', function () {
