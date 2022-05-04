@@ -12,12 +12,9 @@ const rollButton = document.querySelector('.btn--roll');
 const newButton = document.querySelector('.btn--new');
 const holdButton = document.querySelector('.btn--hold');
 
-const scores = [0, 0];
-//default values
-let currentScore = 0;
-let activePlayer = 0;
-let playing = true;
-// ==================================================================
+let scores, currentScore, activePlayer, playing;
+// ==========================================================================
+
 //function ==> enter players names
 function addPlayerName() {
   const firstPlayerName = prompt('Enter first player name');
@@ -36,8 +33,40 @@ function addPlayerName() {
     player1Name.textContent = seconedPlayerName;
   }
 }
-// addPlayerName();
-// =================================================================
+// ==================================================================
+//Reset values function
+
+function init() {
+  alert('Win from Score 50');
+
+  scores = [0, 0];
+  //default values
+  currentScore = 0;
+  activePlayer = 0;
+  //to set state for the game
+  playing = true;
+
+  //hide dice image
+  current0El.textContent = 0;
+  current1El.textContent = 0;
+
+  score0El.textContent = 0;
+  score1El.textContent = 0;
+  //add and remove player--active class
+
+  diceImg.classList.add('d-none');
+
+  player0El.classList.add('player--active');
+  player1El.classList.remove('player--active');
+  player0El.classList.remove('player--winner');
+  player1El.classList.remove('player--winner');
+
+  //calling add players names function
+  addPlayerName();
+}
+init();
+// ==================================================================
+
 function switchPlayer() {
   //when dice === 1 reset activeplayer current score
   document.getElementById(`current--${activePlayer}`).textContent = 0;
@@ -99,6 +128,7 @@ holdButton.addEventListener('click', function () {
       //hide dice image
       diceImg.classList.add('d-none');
 
+      //remove active class to current player
       document
         .querySelector(`.player--${activePlayer}`)
         .classList.remove('player--active');
@@ -112,3 +142,6 @@ holdButton.addEventListener('click', function () {
     }
   }
 });
+// ===============================================================
+// New game button
+newButton.addEventListener('click', init);
