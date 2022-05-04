@@ -1,4 +1,5 @@
 'use strict';
+alertify.alert('Hello Welcome ❤', 'Win from score 50 🥇🏆');
 
 //selecting elements
 const player0El = document.querySelector('.player--0');
@@ -17,8 +18,6 @@ let scores, currentScore, activePlayer, playing;
 //Reset values function
 
 function init() {
-  alert('Win from Score 50');
-
   scores = [0, 0];
   //default values
   currentScore = 0;
