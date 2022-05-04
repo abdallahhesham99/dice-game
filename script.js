@@ -51,9 +51,6 @@ function switchPlayer() {
   //add and remove player--active class
   player0El.classList.toggle('player--active');
   player1El.classList.toggle('player--active');
-
-  //hide dice image every switching player
-  diceImg.classList.add('d-none');
 }
 // =================================================================
 //Rolling dice function
@@ -79,7 +76,6 @@ rollButton.addEventListener('click', function () {
     //switch player
     else {
       //when dice === 1 reset activeplayer current score
-
       switchPlayer();
     }
   }
