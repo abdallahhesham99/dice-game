@@ -13,26 +13,6 @@ const newButton = document.querySelector('.btn--new');
 const holdButton = document.querySelector('.btn--hold');
 
 let scores, currentScore, activePlayer, playing;
-// ==========================================================================
-
-//function ==> enter players names
-function addPlayerName() {
-  const firstPlayerName = prompt('Enter first player name');
-  const seconedPlayerName = prompt('Enter seconed player name');
-  const player0Name = document.getElementById('name--0');
-  const player1Name = document.getElementById('name--1');
-
-  if (
-    (firstPlayerName == null && seconedPlayerName == null) ||
-    (firstPlayerName === '' && seconedPlayerName === '')
-  ) {
-    player0Name.textContent = 'Player 1';
-    player1Name.textContent = 'Player 2';
-  } else {
-    player0Name.textContent = firstPlayerName;
-    player1Name.textContent = seconedPlayerName;
-  }
-}
 // ==================================================================
 //Reset values function
 
@@ -60,9 +40,6 @@ function init() {
   player1El.classList.remove('player--active');
   player0El.classList.remove('player--winner');
   player1El.classList.remove('player--winner');
-
-  //calling add players names function
-  addPlayerName();
 }
 init();
 // ==================================================================
